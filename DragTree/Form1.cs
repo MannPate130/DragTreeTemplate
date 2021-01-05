@@ -46,17 +46,6 @@ namespace DragTree
             // TODO - check if the ellapsed time in milliseconds is > 0. 
             // If yes show the time.
             // If no show "FOUL START" 
-            if (lightTimer.Enabled == false)
-            {
-                lightTimer.Enabled = true;
-                stopWatch.Start();
-            }
-            else
-            {
-                lightTimer.Enabled = false;
-                stopWatch.Stop();
-                timeLabel.Text = $"{stopWatch.Elapsed.ToString(@"ss\:ff")}";
-            }
             if (stopWatch.ElapsedMilliseconds > 0)
             {
                 timeLabel.Text = $"{stopWatch.Elapsed.ToString(@"ss\:ff")}";
@@ -82,6 +71,7 @@ namespace DragTree
             row4col1.BackColor = Color.DarkOliveGreen;
             row4col2.BackColor = Color.DarkOliveGreen;
             // TODO - reset row value and timeLabel text
+            currentRow = 0;
             timeLabel.Text = "";
             row1col1.Text = "";
             row1col2.Text = "";
@@ -91,7 +81,7 @@ namespace DragTree
             row3col2.Text = "";
             row4col1.Text = "";
             row4col2.Text = "";
-            currentRow = 0;
+            
         }
 
         private void lightTimer_Tick(object sender, EventArgs e)
@@ -113,6 +103,7 @@ namespace DragTree
                 case 4:
                     row4col1.BackColor = Color.LightGreen;
                     row4col2.BackColor = Color.LightGreen;
+                    stopWatch.Start();
                     break;
             }
                
