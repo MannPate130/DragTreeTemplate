@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.row1col1 = new System.Windows.Forms.Label();
             this.row1col2 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.resetButton = new System.Windows.Forms.Button();
             this.reactionLabel = new System.Windows.Forms.Label();
+            this.lightTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // row1col1
@@ -160,6 +162,11 @@
             this.reactionLabel.TabIndex = 12;
             this.reactionLabel.Text = "Reaction:";
             // 
+            // lightTimer
+            // 
+            this.lightTimer.Interval = 400;
+            this.lightTimer.Tick += new System.EventHandler(this.lightTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -202,6 +209,7 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Label reactionLabel;
+        private System.Windows.Forms.Timer lightTimer;
     }
 }
 

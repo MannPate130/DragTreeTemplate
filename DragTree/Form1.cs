@@ -15,9 +15,12 @@ namespace DragTree
     {
         // TODO - create an int variable to track currentRow,
         // TODO - create a Stopwatch object called stopwatch 
+        int currentRow = 0;
+        Stopwatch stopWatch = new Stopwatch();
 
         // TODO - create a timer on the form called lightTimer (interval 400ms)
         // TODO - create the tick event for the lightTimer
+        
 
         // place the following comments in the lighTimer tick event
         // TODO - create a switch block that checks currentRow. In each case
@@ -56,5 +59,24 @@ namespace DragTree
 
         }
 
+        private void lightTimer_Tick(object sender, EventArgs e)
+        {
+            switch (currentRow++)
+            {
+                case 1:
+                    row1col1.BackColor = Color.Yellow;
+                    row1col2.BackColor = Color.Yellow;
+                    break;
+                case 2:
+                    row2col1.BackColor = Color.Yellow;
+                    row2col2.BackColor = Color.Yellow;
+                    break;
+                case 3:
+                    row3col1.BackColor = Color.Yellow;
+                    row3col2.BackColor = Color.Yellow;
+                    break;
+            }
+               
+        }
     }
 }
